@@ -1,4 +1,5 @@
-import java.io.{File, PrintWriter}
+import java.nio.charset.StandardCharsets
+import java.nio.file.{Files, Paths}
 
 import net.liftweb.json._
 
@@ -10,7 +11,7 @@ object Application {
 
     private def collectData() : Unit = {
 
-        val starWarsData = StarWarsData.fromAllFilms
+        val starWarsData = StarWarsData()
 
         writeJsonToFile("data.json", starWarsData.asJson)
 
@@ -21,8 +22,7 @@ object Application {
 
         println("Writing to file " + file)
 
-        val writer = new PrintWriter(new File(file))
-        writer.write(pretty(render(json)))
-        writer.close()
+        val data = pretty(render(json))
+        Files.write(Paths.get(file), data.getBytes(StandardCharsets.UTF_8))
     }
 }

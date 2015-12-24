@@ -28,7 +28,7 @@ object StarWarsData {
     private implicit val executionContext = ExecutionContext.fromExecutor(executor)
     private val timeout = 10 seconds
 
-    def fromAllFilms() : StarWarsData = {
+    def apply() : StarWarsData = {
 
         val films = getStarWarsFilms
 
