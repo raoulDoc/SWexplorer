@@ -22,9 +22,9 @@ class SWAPIClientTest extends FlatSpec with Matchers {
 
     it should "return a Film object for the film index" in {
 
-        val film = SWAPIClient.fetchFilmForIndex(2)
+        val swapiFilm = SWAPIClient.fetchSWAPIFilmForIndex(2)
 
-        "The Empire Strikes Back" shouldEqual film.title
+        "The Empire Strikes Back" shouldEqual swapiFilm.title
     }
 
 }

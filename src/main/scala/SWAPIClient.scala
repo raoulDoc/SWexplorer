@@ -29,13 +29,13 @@ object SWAPIClient {
         index
     }
 
-    def fetchFilmForIndex(index: Int): Film = {
+    def fetchSWAPIFilmForIndex(index: Int): SWAPIFilm = {
 
         val swapiUrl = s"http://swapi.co/api/films/${index}/?format=json"
 
         val filmJson = json.parse(HttpClient.fetchContent(swapiUrl))
 
         implicit val formats = DefaultFormats
-        filmJson.extract[Film]
+        filmJson.extract[SWAPIFilm]
     }
 }

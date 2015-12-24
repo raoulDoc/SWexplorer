@@ -8,7 +8,7 @@ class StarWarsDataTest extends FlatSpec with Matchers {
     "Dummy StarWarsData" should "convert to Json" in {
 
 
-        val film = Film("CoolMovie", Seq("Falcon"))
+        val film = Film("CoolMovie", Info("fakeFilmImage", "fakeFilmLink"))
 
         val falconStarship = Starship("Falcon", "fakeImage", "fakeLink")
         val deathstarStarship = Starship("Death Star", "fakeImage", "fakeLink")
@@ -21,12 +21,14 @@ class StarWarsDataTest extends FlatSpec with Matchers {
         val expectedJsonString =
             """{"name":"starwars",
               | "children":[{"name":"CoolMovie",
-              |            "children":
-              |            [{
+              |              "img":"fakeFilmImage",
+              |              "link":"fakeFilmLink",
+              |              "children":
+              |              [{
               |               "name":"Falcon",
               |               "img":"fakeImage",
               |               "link":"fakeLink"
-              |            },{
+              |              },{
               |               "name":"Death Star",
               |               "img":"fakeImage",
               |               "link":"fakeLink"

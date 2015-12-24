@@ -1,1 +1,1 @@
-case class Film(title: String, starships: Seq[String])
+case class Film(title: String, info: Info)

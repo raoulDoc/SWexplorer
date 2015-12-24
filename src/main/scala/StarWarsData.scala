@@ -12,7 +12,11 @@ case class StarWarsData(data: Seq[(Film, Seq[Starship])]) {
             ("children" -> this.data.map {
                 case (film, starships) =>
                     ("name" -> film.title) ~
-                        ("children" -> starships.map(s => (("name" -> s.name) ~
+                    ("img" -> film.info.imageUrl) ~
+                    ("link" -> film.info.link) ~
+                    ("children" ->
+                        starships.map(s =>
+                            (("name" -> s.name) ~
                             ("img" -> s.imageUrl) ~
                             ("link" -> s.link)))
                             )
@@ -26,44 +30,58 @@ object StarWarsData {
 
     private val executor: ExecutorService = Executors.newCachedThreadPool()
     private implicit val executionContext = ExecutionContext.fromExecutor(executor)
-    private val timeout = 10 seconds
+    private val timeout = 15 seconds
 
     def apply() : StarWarsData = {
 
-        val films = getStarWarsFilms
+        val swapiFilms = getSWAPIFilms
 
-        val data = fetchDataForFilms(films)
+        val data = fetchStarWarsData(swapiFilms)
         executor.shutdown()
 
         data
 
     }
 
-    private def getStarWarsFilms: Seq[Film] = {
+    private def getSWAPIFilms: Seq[SWAPIFilm] = {
 
-        println("Fetching Films")
+        println("Fetching Films from SWAPI")
 
         val futureFilms = 1 to 7 map (index => Future {
-            SWAPIClient.fetchFilmForIndex(index)
+            SWAPIClient.fetchSWAPIFilmForIndex(index)
         })
 
         Await.result(Future.sequence(futureFilms), timeout)
     }
 
-    private def fetchDataForFilms(films: Seq[Film]): StarWarsData = {
+    private def fetchStarWarsData(swapiFilms: Seq[SWAPIFilm]): StarWarsData = {
 
-        println("Fetching Starships")
+        println("Fetching All Data")
 
-        StarWarsData(
-            films.map(film => (film, fetchStarshipsForFilm(film)))
-                 .map { case (film, starships) => (film, Await.result(Future.sequence(starships), timeout)) })
+        val futureData = swapiFilms.map(fetchAllDataForSWAPIFilm(_))
+        val data = Await.result(Future.sequence(futureData), timeout)
+        StarWarsData(data)
     }
 
-    private def fetchStarshipsForFilm(film: Film): Seq[Future[Starship]] = {
-        film.starships
+    private def fetchAllDataForSWAPIFilm(swapiFilm: SWAPIFilm): Future[(Film, Seq[Starship])] = {
+        for {
+            film <- Future { fetchStarWarsFilmForName(swapiFilm) }
+            starships <- Future.sequence(fetchStarshipsForFilm(swapiFilm))
+        } yield (film, starships)
+    }
+
+    private def fetchStarWarsFilmForName(swapiFilm: SWAPIFilm) : Film = {
+        println(s"Fetching Film info for ${swapiFilm.title}")
+
+        StarWarsClient.fetchFilmForTitle(swapiFilm.title)
+    }
+
+    private def fetchStarshipsForFilm(swapiFilm: SWAPIFilm): Seq[Future[Starship]] = {
+        println(s"Fetching starships data for ${swapiFilm.title}")
+        swapiFilm.starships
             .map(starshipUrl => Future {
                     val starshipName = SWAPIClient.fetchStarshipNameForUrl(starshipUrl)
-                    StarWarsClient.fetch(starshipName)
+                    StarWarsClient.fetchStarshipForName(starshipName)
             })
     }
 }

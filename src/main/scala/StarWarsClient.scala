@@ -1,17 +1,28 @@
 object StarWarsClient {
+    def fetchFilmForTitle(filmTitle: String) : Film = {
 
-    def fetch(starshipName: String) : Starship = {
+        def htmlContent = fetchHtmlContentForSearchQuery(filmTitle)
+        Film(filmTitle, Info(extractImageUrl(htmlContent), extractLink(htmlContent)))
+    }
 
-        val formattedQuery = starshipName.replaceAll(" ", "%20")
 
-        val starwarsDataBankUrl
-        = s"http://www.starwars.com/search?f%5Bsearch_section%5D=Databank&q=${formattedQuery}"
+    def fetchStarshipForName(starshipName: String) : Starship = {
 
-        def htmlContent = HttpClient.fetchContent(starwarsDataBankUrl)
+        def htmlContent = fetchHtmlContentForSearchQuery(starshipName)
 
         Starship(starshipName,
             extractImageUrl(htmlContent),
             extractLink(htmlContent))
+    }
+
+    private def fetchHtmlContentForSearchQuery(query: String) : String = {
+        val starwarsDataBankUrl = getSearchUrl(query)
+        HttpClient.fetchContent(starwarsDataBankUrl)
+    }
+
+    private def getSearchUrl(query: String): String = {
+        val formattedQuery = query.replaceAll(" ", "%20")
+        s"http://www.starwars.com/search?q=${formattedQuery}"
     }
 
     private def extractLink(htmlContent: String): String = {

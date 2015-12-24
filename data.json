@@ -2,18 +2,20 @@
   "name":"starwars",
   "children":[{
     "name":"A New Hope",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-New-Hope-IV-Poster_c217085b.jpeg?region=43%2C231%2C583%2C328",
+    "link":"http://www.starwars.com/films/star-wars-episode-iv-a-new-hope",
     "children":[{
       "name":"CR90 corvette",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/06/150Covers-281x300.jpg",
+      "link":"http://www.starwars.com/news/collecting-the-galaxy-star-wars-insider-and-hot-wheels-star-wars"
     },{
       "name":"Star Destroyer",
       "img":"http://img.lum.dolimg.com/v1/images/databank_superstardestroyer_01_169_d5757b90.jpeg?region=0%2C0%2C1560%2C878",
       "link":"http://www.starwars.com/databank/super-star-destroyer"
     },{
       "name":"Sentinel-class landing craft",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2013/09/Mythology-Naboo-Core-300x179.jpg",
+      "link":"http://www.starwars.com/news/drawing-from-the-imagination-mythological-creatures-in-star-wars-part-1"
     },{
       "name":"Death Star",
       "img":"http://img.lum.dolimg.com/v1/images/death-star-troopers_250f8c36.jpeg?region=0%2C0%2C2975%2C1675",
@@ -32,11 +34,13 @@
       "link":"http://www.starwars.com/databank/resistance-x-wing"
     },{
       "name":"TIE Advanced x1",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2013/10/facts-300x102.jpg",
+      "link":"http://www.starwars.com/news/f-a-c-t-s-2013-report-from-the-largest-convention-in-the-benelux"
     }]
   },{
     "name":"The Empire Strikes Back",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-Empire-Strikes-Back-V-Poster_878f7fce.jpeg?region=25%2C269%2C612%2C342",
+    "link":"http://www.starwars.com/films/star-wars-episode-v-the-empire-strikes-back",
     "children":[{
       "name":"Millennium Falcon",
       "img":"http://img.lum.dolimg.com/v1/images/Millennium-Falcon_018ea796.jpeg?region=0%2C1%2C1536%2C864",
@@ -76,6 +80,8 @@
     }]
   },{
     "name":"Return of the Jedi",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-Return-Jedi-VI-Poster_a10501d2.jpeg?region=12%2C123%2C624%2C349",
+    "link":"http://www.starwars.com/films/star-wars-episode-vi-return-of-the-jedi",
     "children":[{
       "name":"Millennium Falcon",
       "img":"http://img.lum.dolimg.com/v1/images/Millennium-Falcon_018ea796.jpeg?region=0%2C1%2C1536%2C864",
@@ -122,19 +128,21 @@
       "link":"http://www.starwars.com/databank/gr-75-medium-transport"
     },{
       "name":"CR90 corvette",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/06/150Covers-281x300.jpg",
+      "link":"http://www.starwars.com/news/collecting-the-galaxy-star-wars-insider-and-hot-wheels-star-wars"
     }]
   },{
     "name":"The Phantom Menace",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-Phantom-Menace-I-Poster_f5832812.jpeg?region=0%2C278%2C678%2C382",
+    "link":"http://www.starwars.com/films/star-wars-episode-i-the-phantom-menace",
     "children":[{
       "name":"Naboo Royal Starship",
       "img":"http://img.lum.dolimg.com/v1/images/databank_nabooroyalstarship_01_169_e61f677e.jpeg?region=0%2C0%2C1560%2C878",
       "link":"http://www.starwars.com/databank/naboo-royal-starship"
     },{
       "name":"Scimitar",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/02/jedi_1115-300x128.jpg",
+      "link":"http://www.starwars.com/news/death-star-ii-personnel-and-imperial-human-resources"
     },{
       "name":"Republic Cruiser",
       "img":"http://img.lum.dolimg.com/v1/images/databank_republiccruiser_01_169_fd769e33.jpeg?region=0%2C0%2C1560%2C878",
@@ -150,6 +158,8 @@
     }]
   },{
     "name":"Attack of the Clones",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-Attack-Clones-II-Poster_53baa2e7.jpeg?region=0%2C194%2C678%2C380",
+    "link":"http://www.starwars.com/films/star-wars-episode-ii-attack-of-the-clones",
     "children":[{
       "name":"Slave 1",
       "img":"http://img.lum.dolimg.com/v1/images/databank_slavei_01_169_8dc3102d.jpeg?region=0%2C0%2C1560%2C878",
@@ -172,16 +182,16 @@
       "link":"http://www.starwars.com/databank/eta-2-jedi-starfighter"
     },{
       "name":"H-type Nubian yacht",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/06/default-img@2x-300x193.jpg",
+      "link":"http://www.starwars.com/news/chronicling-the-clone-wars-2"
     },{
       "name":"Droid control ship",
       "img":"http://img.lum.dolimg.com/v1/images/databank_battledroid_01_169_1524f145.jpeg?region=0%2C0%2C1560%2C878",
       "link":"http://www.starwars.com/databank/battle-droid"
     },{
       "name":"Republic Assault ship",
-      "img":"http://img.lum.dolimg.com/v1/images/resistance-x-wing_9433981f.jpeg?region=0%2C0%2C1560%2C878",
-      "link":"http://www.starwars.com/databank/resistance-x-wing"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/09/12-DE-fight-on-coruscant-266x300.jpg",
+      "link":"http://www.starwars.com/news/star-wars-the-essential-guide-to-warfare-authors-cut-part-12-tales-of-the-new-republic"
     },{
       "name":"Solar Sailer",
       "img":"http://img.lum.dolimg.com/v1/images/databank_geonosiansolarsailer_01_169_b3873578.jpeg?region=0%2C0%2C1560%2C878",
@@ -189,6 +199,8 @@
     }]
   },{
     "name":"Revenge of the Sith",
+    "img":"http://img.lum.dolimg.com/v1/images/Star-Wars-Revenge-Sith-III-Poster_646108ce.jpeg?region=0%2C340%2C746%2C420",
+    "link":"http://www.starwars.com/films/star-wars-episode-iii-revenge-of-the-sith",
     "children":[{
       "name":"Jedi starfighter",
       "img":"http://img.lum.dolimg.com/v1/images/ETA-2-starfighter-main-image_bedd3aaa.jpeg?region=232%2C0%2C1451%2C816",
@@ -199,8 +211,8 @@
       "link":"http://www.starwars.com/databank/republic-cruiser"
     },{
       "name":"Theta-class T-2c shuttle",
-      "img":"http://img.lum.dolimg.com/v1/images/databank_obadiah_01_169_cbb9d94d.jpeg?region=0%2C0%2C1560%2C878",
-      "link":"http://www.starwars.com/databank/oba-diah"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2012/10/floating-300x225.jpg",
+      "link":"http://www.starwars.com/news/how-star-wars-inspires-real-scientists-and-engineers"
     },{
       "name":"Droid control ship",
       "img":"http://img.lum.dolimg.com/v1/images/databank_battledroid_01_169_1524f145.jpeg?region=0%2C0%2C1560%2C878",
@@ -211,20 +223,20 @@
       "link":"http://www.starwars.com/databank/republic-attack-cruiser"
     },{
       "name":"Naboo star skiff",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/01/Trivia-Tuesday-Banner2-300x150.jpg",
+      "link":"http://www.starwars.com/news/star-wars-trivia-tuesday-answers"
     },{
       "name":"Jedi Interceptor",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2015/02/Part4_10-300x146.jpeg",
+      "link":"http://www.starwars.com/news/collecting-the-galaxy-15-years-of-lego-star-wars-part-4"
     },{
       "name":"arc-170",
       "img":"http://img.lum.dolimg.com/v1/images/databank_arc170starfighter_01_169_f932abcb.jpeg?region=0%2C0%2C1560%2C878",
       "link":"http://www.starwars.com/databank/arc-170-starfighter"
     },{
       "name":"Banking clan frigte",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/05/essentialfeat-300x225.jpg",
+      "link":"http://www.starwars.com/news/star-wars-the-essential-guide-to-warfare-authors-cut"
     },{
       "name":"Belbullab-22 starfighter",
       "img":"http://img.lum.dolimg.com/v1/images/databank_soullessone_01_169_08305d9b.jpeg?region=0%2C0%2C1560%2C878",
@@ -235,11 +247,13 @@
       "link":"http://www.starwars.com/databank/v-wing-fighter"
     },{
       "name":"CR90 corvette",
-      "img":"",
-      "link":"http://www.starwars.com/star-wars-fan-film-awards"
+      "img":"http://starwarsblog.starwars.com/wp-content/uploads/sites/6/2014/06/150Covers-281x300.jpg",
+      "link":"http://www.starwars.com/news/collecting-the-galaxy-star-wars-insider-and-hot-wheels-star-wars"
     }]
   },{
     "name":"The Force Awakens",
+    "img":"http://img.lum.dolimg.com/v1/images/avco_payoff_1-sht_v7_lg_32e68793.jpeg?region=0%2C111%2C1620%2C919",
+    "link":"http://www.starwars.com/films/star-wars-episode-vii-the-force-awakens",
     "children":[{
       "name":"T-70 X-wing fighter",
       "img":"http://img.lum.dolimg.com/v1/images/resistance-x-wing_9433981f.jpeg?region=0%2C0%2C1560%2C878",
