@@ -39,7 +39,9 @@ object StarWarsData {
     def apply() : StarWarsData = {
 
         logger.info("Start fetching Star Wars data")
-        fetchStarWarsData(fetchSWAPIFilms)
+        val starWarsData: StarWarsData = fetchStarWarsData(fetchSWAPIFilms)
+        executor.shutdown()
+        starWarsData
     }
 
     private def fetchSWAPIFilms: Seq[SWAPIFilm] = {
@@ -90,8 +92,6 @@ object StarWarsData {
         override def newThread(r: Runnable) : Thread = {
             val thread = new Thread(r)
             thread.setName(s"SWThread-${count.incrementAndGet}")
-            thread.setDaemon(true)
-
             thread
         }
     }
