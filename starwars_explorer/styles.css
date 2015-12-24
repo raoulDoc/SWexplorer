@@ -1,0 +1,17 @@
+body {font-family: "Helvetica Neue Light", Consolas, monaco, monospace; line-height: 160%; font-size: 16px;  margin: 0;}
+path.link {
+    fill: none;
+    stroke-width: 2px;
+}
+.node:not(:hover) .nodetext {
+    display: none;
+}
+.node:hover {
+    cursor:pointer;
+}
+
+h1 { font-size: 36px; margin: 10px 0; text-transform: uppercase; font-weight: normal; z-index: 10}
+
+.container {
+    text-align: center;
+}
