@@ -34,16 +34,13 @@ object StarWarsData {
 
     def apply() : StarWarsData = {
 
-        val swapiFilms = getSWAPIFilms
-
-        val data = fetchStarWarsData(swapiFilms)
+        val data = fetchStarWarsData(fetchSWAPIFilms)
         executor.shutdown()
 
         data
-
     }
 
-    private def getSWAPIFilms: Seq[SWAPIFilm] = {
+    private def fetchSWAPIFilms: Seq[SWAPIFilm] = {
 
         println("Fetching Films from SWAPI")
 
