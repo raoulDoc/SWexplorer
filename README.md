@@ -25,3 +25,7 @@ $ sbt run
 $ python -m SimpleHTTPServer &
 $ open http://localhost:8000/starwars_explorer/
 ```
+
+## Notice
+
+Data collection relies on two separate sources which may change in the future. Consequently this application may fail in the future. 
