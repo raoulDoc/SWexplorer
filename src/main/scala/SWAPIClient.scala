@@ -12,7 +12,21 @@ object SWAPIClient {
 
         implicit val formats = DefaultFormats
         (starshipJson \ "name").extract[String]
+    }
 
+    def fetchStarshipNameForUrl(starshipUrl: String): String = {
+        val index: Int = extractStarshipIndexFromUrl(starshipUrl)
+        SWAPIClient.fetchStarshipNameForIndex(index)
+    }
+
+    private def extractStarshipIndexFromUrl(starshipUrl: String): Int = {
+        val pattern = """http://swapi.co/api/starships/(\d+)/""".r
+
+        val optIndex = pattern.findFirstMatchIn(starshipUrl)
+
+        // throws if couldn't parse
+        val index = optIndex.map(m => m.group(1).toInt).get
+        index
     }
 
     def fetchFilmForIndex(index: Int): Film = {

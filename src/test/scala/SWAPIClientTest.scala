@@ -12,6 +12,14 @@ class SWAPIClientTest extends FlatSpec with Matchers {
         "CR90 corvette" shouldEqual starshipName
     }
 
+    it should "return the correct name of spaceship for the associated url" in {
+
+        val url = "http://swapi.co/api/starships/10/"
+        val starshipName = SWAPIClient.fetchStarshipNameForUrl(url)
+
+        "Millennium Falcon" shouldEqual starshipName
+    }
+
     it should "return a Film object for the film index" in {
 
         val film = SWAPIClient.fetchFilmForIndex(2)

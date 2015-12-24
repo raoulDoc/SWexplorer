@@ -61,19 +61,9 @@ object StarWarsData {
 
     private def fetchStarshipsForFilm(film: Film): Seq[Future[Starship]] = {
         film.starships
-            .map(starshipUrl => Future { fetchStarship(starshipUrl) })
-    }
-
-    private def fetchStarship(starshipUrl: String): Starship = {
-        val pattern = """http://swapi.co/api/starships/(\d+)/""".r
-
-        val optIndex = pattern.findFirstMatchIn(starshipUrl)
-
-        // throws if couldn't parse
-        val index = optIndex.map(m => m.group(1)).get.toInt
-
-        val starshipName = SWAPIClient.fetchStarshipNameForIndex(index)
-
-        StarWarsClient.fetch(starshipName)
+            .map(starshipUrl => Future {
+                    val starshipName = SWAPIClient.fetchStarshipNameForUrl(starshipUrl)
+                    StarWarsClient.fetch(starshipName)
+            })
     }
 }
