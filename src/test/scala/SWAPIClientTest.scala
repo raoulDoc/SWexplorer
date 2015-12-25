@@ -1,3 +1,4 @@
+import clients.SWAPIClient
 import org.scalatest.{Matchers, FlatSpec}
 
 /**
@@ -20,7 +21,7 @@ class SWAPIClientTest extends FlatSpec with Matchers {
         "Millennium Falcon" shouldEqual starshipName
     }
 
-    it should "return a Film object for the film index" in {
+    it should "return a models.Film object for the film index" in {
 
         val swapiFilm = SWAPIClient.fetchSWAPIFilmForIndex(2)
 

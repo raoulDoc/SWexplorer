@@ -4,6 +4,7 @@ import java.nio.file.{Files, Paths}
 import com.typesafe.scalalogging.Logger
 import net.liftweb.json._
 import org.slf4j.LoggerFactory
+import services.StarWarsDataService
 
 object Application {
 
@@ -15,7 +16,8 @@ object Application {
 
     private def collectData() : Unit = {
 
-        writeJsonToFile("data.json", StarWarsData().asJson)
+        val jsonData = StarWarsDataService.fetchStarWarsData().asJson
+        writeJsonToFile("data.json", jsonData)
         logger.info("Success")
     }
 

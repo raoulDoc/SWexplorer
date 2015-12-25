@@ -1,42 +1,26 @@
-import java.util.concurrent.atomic.AtomicInteger
-import java.util.concurrent.{ThreadFactory, ExecutorService, Executors}
+package services
 
+import java.util.concurrent.atomic.AtomicInteger
+import java.util.concurrent.{ExecutorService, Executors, ThreadFactory}
+
+import clients.{SWAPIClient, StarWarsClient}
 import com.typesafe.scalalogging.Logger
-import net.liftweb.json.JsonAST
-import net.liftweb.json.JsonDSL._
+import models.{StarWarsData, Film, SWAPIFilm, Starship}
 import org.slf4j.LoggerFactory
 
-import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContext, Future}
+import scala.concurrent.duration._
 
-case class StarWarsData(data: Seq[(Film, Seq[Starship])]) {
-     def asJson(): JsonAST.JObject = {
-        (("name" -> "starwars") ~
-            ("children" -> this.data.map {
-                case (film, starships) =>
-                    ("name" -> film.title) ~
-                    ("img" -> film.info.imageUrl) ~
-                    ("link" -> film.info.link) ~
-                    ("children" ->
-                        starships.map(s =>
-                            (("name" -> s.name) ~
-                            ("img" -> s.imageUrl) ~
-                            ("link" -> s.link)))
-                            )
-            }))
-    }
-}
-
-object StarWarsData {
+object StarWarsDataService {
 
     import scala.language.postfixOps
 
     private val executor: ExecutorService = Executors.newCachedThreadPool(new StarwarsDataThreadFactory())
     private implicit val executionContext = ExecutionContext.fromExecutor(executor)
     private val timeout = 15 seconds
-    private val logger = Logger(LoggerFactory.getLogger("StarWarsData"))
+    private val logger = Logger(LoggerFactory.getLogger("StarWarsDataService"))
 
-    def apply() : StarWarsData = {
+    def fetchStarWarsData() : StarWarsData = {
 
         logger.info("Start fetching Star Wars data")
         val starWarsData: StarWarsData = fetchStarWarsData(fetchSWAPIFilms)
@@ -72,7 +56,7 @@ object StarWarsData {
     }
 
     private def fetchStarWarsFilmForName(swapiFilm: SWAPIFilm) : Film = {
-        logger.info(s"Fetching Film info for ${swapiFilm.title}")
+        logger.info(s"Fetching models.Film info for ${swapiFilm.title}")
 
         StarWarsClient.fetchFilmForTitle(swapiFilm.title)
     }
@@ -95,5 +79,4 @@ object StarWarsData {
             thread
         }
     }
-
 }

@@ -18,8 +18,8 @@
       "link":"http://www.starwars.com/news/drawing-from-the-imagination-mythological-creatures-in-star-wars-part-1"
     },{
       "name":"Death Star",
-      "img":"http://img.lum.dolimg.com/v1/images/death-star-troopers_250f8c36.jpeg?region=0%2C0%2C2975%2C1675",
-      "link":"http://www.starwars.com/databank/death-star-troopers"
+      "img":"http://img.lum.dolimg.com/v1/images/death-star-super-laser-main-image_408bebb4.jpeg?region=317%2C0%2C1164%2C656",
+      "link":"http://www.starwars.com/databank/death-star-superlaser"
     },{
       "name":"Millennium Falcon",
       "img":"http://img.lum.dolimg.com/v1/images/Millennium-Falcon_018ea796.jpeg?region=0%2C1%2C1536%2C864",
@@ -116,8 +116,8 @@
       "link":"http://www.starwars.com/databank/a-wing-fighter"
     },{
       "name":"B-wing",
-      "img":"http://img.lum.dolimg.com/v1/images/prototype-b-wing_4a86a3b4.jpeg?region=0%2C0%2C1560%2C878",
-      "link":"http://www.starwars.com/databank/b-wing-prototype-blade-wing"
+      "img":"http://img.lum.dolimg.com/v1/images/databank_bwingfighter_01_169_460cc528.jpeg?region=0%2C0%2C1560%2C878",
+      "link":"http://www.starwars.com/databank/b-wing-fighter"
     },{
       "name":"Star Destroyer",
       "img":"http://img.lum.dolimg.com/v1/images/databank_superstardestroyer_01_169_d5757b90.jpeg?region=0%2C0%2C1560%2C878",

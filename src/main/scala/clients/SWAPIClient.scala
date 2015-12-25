@@ -1,3 +1,6 @@
+package clients
+
+import models.SWAPIFilm
 import net.liftweb.json
 import net.liftweb.json.DefaultFormats
 

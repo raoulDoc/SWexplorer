@@ -1,3 +1,5 @@
+package clients
+
 import scala.io.Source
 
 object HttpClient {

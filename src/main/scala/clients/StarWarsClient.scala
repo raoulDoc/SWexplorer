@@ -1,3 +1,7 @@
+package clients
+
+import models.{Starship, Info, Film}
+
 object StarWarsClient {
     def fetchFilmForTitle(filmTitle: String) : Film = {
 

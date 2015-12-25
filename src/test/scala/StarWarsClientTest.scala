@@ -1,3 +1,4 @@
+import clients.StarWarsClient
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
@@ -5,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
   */
 class StarWarsClientTest extends FlatSpec with Matchers {
 
-    "StarWars online" should "return a Starship object for a search query" in {
+    "StarWars online" should "return a models.Starship object for a search query" in {
 
         val starship = StarWarsClient.fetchStarshipForName("Millennium Falcon")
 
@@ -17,7 +18,7 @@ class StarWarsClientTest extends FlatSpec with Matchers {
 
     }
 
-    "StarWars online" should "return a Film object for a search query" in {
+    "StarWars online" should "return a models.Film object for a search query" in {
 
         val film = StarWarsClient.fetchFilmForTitle("Revenge of the Sith")
 

@@ -1,9 +1,11 @@
-import org.scalatest.{FlatSpec, Matchers}
+import models.{StarWarsData, Film, Info, Starship}
 import net.liftweb._
+import org.scalatest.{FlatSpec, Matchers}
+
 /**
   * Created by raoul-gabrielurma on 24/12/2015.
   */
-class StarWarsDataTest extends FlatSpec with Matchers {
+class StarWarsDataServiceTest extends FlatSpec with Matchers {
 
     "Dummy StarWarsData" should "convert to Json" in {
 
